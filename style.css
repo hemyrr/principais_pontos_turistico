@@ -131,26 +131,60 @@ header nav ul li a:hover {
     padding: 10px;
     color: white;
 }
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container para os pontos turísticos */
+.pontos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
 
 .ponto-turistico {
-    margin-bottom: 50px;
+    width: 48%;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    overflow: hidden; /* Garante que o zoom não ultrapasse as bordas */
 }
 
 .ponto-turistico img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 5px solid #fff;
-    transition: transform 0.3s ease;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out; /* Suaviza o efeito de zoom */
 }
 
+/* Efeito de zoom ao passar o mouse */
 .ponto-turistico img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Aumenta a imagem 10% */
 }
 
+@media (max-width: 768px) {
+    .ponto-turistico {
+        width: 100%;
+    }
+
+    .ponto-turistico img {
+        height: auto;
+    }
+}
+
+
+/* Estilos das descrições */
 .descricao {
     margin-top: 20px;
     color: #fff;
@@ -168,6 +202,11 @@ header nav ul li a:hover {
     margin-bottom: 10px;
     color: #ddd;
 }
+
+.pontotit {
+    text-align: center;
+}
+
 
 
 
@@ -396,3 +435,4 @@ footer {
 #rede-h3{
     color: #ffffff;
 }
+
